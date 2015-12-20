@@ -11,9 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class RecycleFragment extends Fragment {
-RecyclerView mRecyclerView;
+    RecyclerView mRecyclerView;
     LinearLayoutManager layoutManager;
     RecycleAdapter mAdapter;
+
     public RecycleFragment() {
         // Required empty public constructor
     }
@@ -28,11 +29,11 @@ RecyclerView mRecyclerView;
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mRecyclerView= (RecyclerView) view.findViewById(R.id.my_recycler_view);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
-        layoutManager=new LinearLayoutManager(getActivity());
+        layoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(layoutManager);
-        mAdapter=new RecycleAdapter(((MainActivity)getActivity()).quoteItems);
+        mAdapter = new RecycleAdapter(((MainActivity) getActivity()).quoteItems);
         mRecyclerView.setAdapter(mAdapter);
     }
 }
